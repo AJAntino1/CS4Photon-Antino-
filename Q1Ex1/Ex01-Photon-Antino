@@ -1,0 +1,46 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package ex01.photon.antino;
+
+/**
+ *
+ * @author PHOTON
+ */
+public class Ex01PhotonANTINO {
+    public static void main(String[] args) {
+        String person1 = "AJ Antino";
+        System.out.printf("Student 1\n" + "Name: " + "%s\n", person1);
+        int age1 = 15;
+        System.out.printf("Age: " + "%d\n", age1);
+        double grade1 = 1.75;
+        System.out.printf("Grade in Math: " + "%.2f\n\n", grade1);
+        
+        String person2 = "Sean Badiola";
+        System.out.printf("Student 2\n" + "Name: " + "%s\n", person2);
+        int age2 = 14;
+        System.out.printf("Age: " + "%d\n", age2);
+        double grade2 = 1.50;
+        System.out.printf("Grade in Math: " + "%.2f\n\n", grade2);
+        
+        String person3 = "Patric Legaspi";
+        System.out.printf("Student 3\n" + "Name: " + "%s\n", person3);
+        int age3 = 15;
+        System.out.printf("Age: " + "%d\n", age3);
+        double grade3 = 1.25;
+        System.out.printf("Grade in Math: " + "%.2f\n\n", grade3);
+        
+        int ageSum = age1 + age2 + age3;
+        System.out.println("Total sum of age: " + ageSum + " (operation: sum)");
+        boolean isOlder = age1 > age2;
+        System.out.println("AJ Antino older than Sean Badiola: " + isOlder + " (operation: comparison)");
+        boolean isHigherGrade = grade3 < grade1;
+        System.out.println("Patric Legaspi have higher grade in math than AJ Antino: " + isHigherGrade + " (operation: comparison)");
+        boolean isSameAge = age2 == age3;
+        System.out.println("Sean Badiola and Patric Legaspi are the same age: " + isSameAge + " (operation: comparison)");
+        
+    }
+    
+}
