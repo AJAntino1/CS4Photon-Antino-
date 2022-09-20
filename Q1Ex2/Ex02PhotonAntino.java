@@ -31,25 +31,26 @@ public class Ex02PhotonAntino {
                         range = second;
                         guesses = third;
                         int random = (int) Math.floor(Math.random()*range) + min;
-                        System.out.println("The number is between " + min + " to " + range);
+                        System.out.println(random);
+                        System.out.println("\nThe number is between " + min + " to " + range+" ");
                         System.out.println("Please only input integer values!");
                         System.out.print("You have " + guesses + " guess(es) left. What is your guess? ");
                         while (playerGuess != random) {
                         playerGuess = scan.nextInt();
                         guesses--;
-                        if (playerGuess > random) {
+                        if (playerGuess > random && guesses != 0) {
                             System.out.print("Guess lower! You have " + guesses + " guess(es) left. What is your guess? " );
                         }
-                        else if (playerGuess < random) {
+                        else if (playerGuess < random && guesses != 0) {
                             System.out.print("Guess higher! You have " + guesses + " guess(es) left. What is your guess? ");
                         }
                         
                         else {
                             System.out.println("You got it!");
-
+                            break;
                         } 
                         
-                        if (guesses == 0){
+                        if (guesses == 0 && playerGuess != random ){
                             System.out.println("\nYou lost...");
                             break;
                         } 
