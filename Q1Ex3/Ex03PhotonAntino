@@ -1,0 +1,15 @@
+package exercise3;
+
+public class Main {
+
+    public static void main(String[] args) {
+        User AJ = new User("AJ", "AJ Antino", 123, "DOST Hymn", false);
+        System.out.println("Name: " + AJ.getName());
+        System.out.println("Username: " + AJ.getUsername());
+        System.out.println("Password: " + AJ.getPassword());
+        System.out.println("Song: " + AJ.getSong());
+        System.out.println("If premium account: " + AJ.getPremiumStatus());
+        
+    }
+    
+}
