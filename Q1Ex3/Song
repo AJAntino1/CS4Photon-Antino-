@@ -1,0 +1,11 @@
+package exercise3;
+
+public class Song {
+    private String name, album;
+    private String artist;
+    private String genre;
+    
+    public Song(){
+        
+    }
+}
