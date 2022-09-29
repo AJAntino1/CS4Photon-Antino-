@@ -1,0 +1,62 @@
+package longtest;
+import java.util.Scanner;
+
+public class Q1SA1PhotonAntinoAJ {
+    public static void main(String[] args) {
+        
+        Scanner scan = new Scanner(System.in);
+        String expensesType = "";
+        int day = 0;
+        double dailyBudget, totalExpenses = 0, difference = 0;
+        double school = 0, food = 0, leisure = 0, misc = 0;
+        String response = "y";
+        System.out.print("How much is your daily budget?");
+        dailyBudget = scan.nextDouble();
+        do {
+            System.out.print("What are your expenses (school, food, leisure, misc, end)? ");
+            expensesType = scan.nextLine();
+            switch(expensesType) {
+                case "school":
+                    System.out.print("How much did you spend? ");
+                    school = Double.parseDouble(scan.nextLine());
+                    break;
+                case "food":
+                    System.out.print("How much did you spend? ");
+                    food = Double.parseDouble(scan.nextLine());
+                    break;
+                case "leisure":
+                    System.out.print("How much did you spend? ");
+                    leisure = Double.parseDouble(scan.nextLine());
+                    break;
+                case "misc":
+                    System.out.print("How much did you spend? ");
+                    misc = Double.parseDouble(scan.nextLine());
+                    break;
+                case "end":
+                    totalExpenses = school + food + leisure + misc;
+                    System.out.printf("Your expenses:%n" +
+                            "School: %.2f%n" +
+                            "Food: %.2f%n" +
+                            "Leisure: %.2f%n" +
+                            "Misc: %.2f%n" +
+                            "Total Expenses: %.2f", school, food, leisure, misc, totalExpenses);
+                    day ++;
+                            if (totalExpenses < dailyBudget) {
+                    difference = dailyBudget - totalExpenses;
+                    System.out.printf("You are under your budget for %i day/s (" + dailyBudget + ") by %f", day, difference);
+                    }
+                    else if (totalExpenses > dailyBudget) {
+                    difference = totalExpenses - dailyBudget;
+                    System.out.printf("You are over your budget for %i day/s (" + dailyBudget + ") by %f", day, difference);
+                    }
+                    break;
+                default:            
+            }
+        } while(response.equalsIgnoreCase("y"));
+        System.out.print("Will you continue the program (y/n)? ");
+                    while (response.equalsIgnoreCase("")){
+                    response = scan.nextLine();
+                    }
+
+    }
+}
