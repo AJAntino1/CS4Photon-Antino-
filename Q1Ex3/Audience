@@ -1,0 +1,57 @@
+package exercise3;
+public class Audience {
+    private String firstname;
+    private String lastname;
+    private int age;
+    private String favoriteGenre;
+    private boolean vipAccess;
+    
+    public Audience(String firstname, String lastname, int age, String favoriteGenre, boolean vipAccess) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.age = age;
+        this.favoriteGenre = favoriteGenre;
+        this.vipAccess = vipAccess;
+    
+    }
+    
+    public void setFirstname(String firstname){
+        this.firstname = firstname;
+    }
+    
+    public String getFirstname(){
+        return firstname;
+    }
+    
+    public void setLastname(String lastname){
+        this.lastname = lastname;
+    }
+    
+    public String getLastname(){
+        return lastname;
+    }
+    
+    public void setAge(int age){
+        this.age = age;
+    }
+    
+    public int getAge(){
+        return age;
+    }
+    
+    public void setFavoriteGenre(String favoriteGenre){
+        this.favoriteGenre = favoriteGenre;
+    }
+    
+    public String getFavoriteGenre(){
+        return favoriteGenre;
+    }
+    
+    public void setVipAccess(boolean vipAccess){
+        this.vipAccess = vipAccess;
+    }
+    
+    public boolean getVipAccess(){
+        return vipAccess;
+    }
+}
