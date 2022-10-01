@@ -1,0 +1,53 @@
+package exercise3;
+
+public class Ex03PhotonAntino {
+
+    public static void main(String[] args) {
+        Audience AJ = new Audience("AJ", "Antino", 15, "HipHop", true);
+        System.out.println("\nFirstname: " + AJ.getFirstname());
+        System.out.println("Lastname: " + AJ.getLastname());
+        System.out.println("Age: " + AJ.getAge());
+        System.out.println("Favorite Genre: " + AJ.getFavoriteGenre());
+        System.out.println("Does the Audience have Vip Access? " + AJ.getVipAccess());
+        
+        Audience Sean = new Audience("Sean", "Badiola", 14, "HipHop", true);
+        System.out.println("\nFirstname: " + Sean.getFirstname());
+        System.out.println("Lastname: " + Sean.getLastname());
+        System.out.println("Age: " + Sean.getAge());
+        System.out.println("Favorite Genre: " + Sean.getFavoriteGenre());
+        System.out.println("Does the Audience have Vip Access? " + Sean.getVipAccess());
+        
+        Audience Patric = new Audience("Patric", "Legaspi", 15, "K-Pop", true);
+        System.out.println("\nFirstname: " + Patric.getFirstname());
+        System.out.println("Lastname: " + Patric.getLastname());
+        System.out.println("Age: " + Patric.getAge());
+        System.out.println("Favorite Genre: " + Patric.getFavoriteGenre());
+        System.out.println("Does the Audience have Vip Access? " + Patric.getVipAccess());
+        
+        Song Kagome = new Song("Kagome", "Hugas", "Lo Ki", "HipHop", "November 6, 2021");
+        Song SomebodyThatIUsedToKnow = new Song("Somebody That I Used to Know", "Making Mirrors", "Gotye", "Pop", "July 6, 2011");
+        Song Daddy = new Song("Daddy", "Chiljip Psy-da", "Psy", "K-pop", "November 30, 2015");
+        
+        Singer LoKi = new Singer();
+        LoKi.setName("Lo Ki");
+        LoKi.setEarnings(0);
+        LoKi.setNoOfPerformances(0);
+        LoKi.setFavoriteSong(Kagome);
+        
+        System.out.println("\nSinger name: " + LoKi.getName());
+        System.out.println("Singer favorite song: " + LoKi.getFavoriteSong().getName());
+        System.out.println("\nBefore Performance");
+        System.out.println("Singer Earnings: " + LoKi.getEarnings());
+        System.out.println("Singer number of performances: " + LoKi.getNoOfPerformances());
+        
+        LoKi.performForAudience(12);
+        System.out.println("\nAfter Performance");
+        System.out.println("Singer Earnings: " + LoKi.getEarnings());
+        System.out.println("Singer number of performances: " + LoKi.getNoOfPerformances());
+        
+        System.out.println("\nChange the favorite song of the singer");
+        LoKi.changeFavSong(Daddy);
+        System.out.println("New favorite song of the singer: " + LoKi.getFavoriteSong().getName());
+    }
+    
+}
