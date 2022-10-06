@@ -1,0 +1,71 @@
+package exercise3;
+
+public class Singer {
+    private String name;
+    private int noOfPerformances;
+    private static int totalPerformances;
+    private double earnings;
+    private Song favoriteSong;
+    
+    public Singer () {
+    }
+    
+    public Singer(String name, int noOfPerformances, double earnings, Song favoriteSong) {
+        this.name = name;
+        this.noOfPerformances = noOfPerformances;
+        this.earnings = earnings;
+        this.favoriteSong = favoriteSong;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getNoOfPerformances() {
+        return noOfPerformances;
+    }
+
+    public void setNoOfPerformances(int noOfPerformances) {
+        this.noOfPerformances = noOfPerformances;
+    }
+    
+    public static int getTotalPerformances(){
+        return totalPerformances;
+    }
+    
+    public double getEarnings() {
+        return earnings;
+    }
+
+    public void setEarnings(double earnings) {
+        this.earnings = earnings;
+    }
+
+    public Song getFavoriteSong() {
+        return favoriteSong;
+    }
+    public void setFavoriteSong(Song favoriteSong) {
+        this.favoriteSong = favoriteSong;
+    }
+    public void performForAudience(int numberOfPeople) {
+        noOfPerformances += 1;
+        earnings += numberOfPeople * 100;
+        totalPerformances = noOfPerformances;
+    }
+    
+    public void performForAudience(int numberOfPeople, Singer otherSinger){
+        noOfPerformances += 1;
+        otherSinger.noOfPerformances += 1;
+        earnings += (numberOfPeople * 100)/2;
+        otherSinger.earnings += (numberOfPeople * 100)/2;
+        totalPerformances = noOfPerformances + otherSinger.noOfPerformances;
+    }
+    
+    public void changeFavSong(Song favoriteSong) {
+        this.favoriteSong = favoriteSong;
+    }
+}
