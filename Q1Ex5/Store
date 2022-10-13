@@ -1,0 +1,105 @@
+package ex05photonantino;
+
+import java.util.*;
+
+public class Store {
+  private String name;
+  private double earnings;
+  private ArrayList<Item> itemList;
+  private static ArrayList<Store> storeList = new ArrayList();
+
+  public Store(String name){
+      this.name = name;
+      this.earnings = 0;
+      this.itemList = new ArrayList();
+      storeList.add(this);
+  }
+
+  public String getName(){
+    return name;
+  }
+  public double getEarnings(){
+    return earnings;
+  }
+  public void sellItem(int index){
+    boolean found = false;
+    for (Item i : itemList) {
+        if (index <= itemList.size()){
+            found = true;
+            this.earnings += i.getCost();
+            System.out.println("\nThe item " + i.getName() + " was sold for " + earnings);
+        }
+    }
+    if(!found){
+        System.out.println("\nThere are only " + itemList.size() + " Items in the store and the item was not found");
+    }
+  }
+  public void sellItem(String name){
+    boolean found1 = false;
+    for(Item i : itemList) {
+        if(i.getName().equals(name)) {
+        found1 = true;
+        this.earnings += i.getCost();
+        System.out.println("\nThe item " + i.getName() + " was sold for " + earnings);
+      }
+      }
+    if(!found1) {
+        System.out.println("\nThe store doesn't sell that item");
+    }
+  }
+  public void sellItem(Item i){
+      boolean found2 = false;
+      for(Store s : storeList){
+          if(s.getName().equals(name)) {
+          if(itemList.contains(i)) {
+          this.earnings += i.getCost();
+          System.out.println("\nThe item " + i.getName() + " was sold for " + earnings);
+      }
+          }
+      }
+    if(!found2) {
+        System.out.println("\nThe store doesn't sell that item");
+    }
+  }
+  public void addItem(Item i){
+      for(Store store : storeList) {
+          if(store.getName().equals(name)) {
+          itemList.add(i);
+          }
+      }
+  }
+  public void filterType(String type){
+      System.out.println("\nThe items that are " + type + " type are: ");
+      for(Item i : itemList) {
+        if(i.getType().equals(type)) {
+          System.out.printf("%s%n", i.getName());
+        }
+      }
+
+  }
+  public void filterCheap(double maxCost){
+      System.out.println("\nThe items that cost lower than " + maxCost + " are:");
+      for(Item i : itemList) {
+          if(i.getCost() < maxCost) {
+              System.out.printf("%s%n", i.getName());
+          }
+      }
+
+  }
+  public void filterExpensive(double minCost){
+      System.out.println("\nThe items that cost higher than " + minCost + " are:");
+      for(Item i : itemList) {
+          if(i.getCost() > minCost) {
+              System.out.printf("%s%n", i.getName());
+          }
+      }
+      
+  }
+  public static void printStats(){
+      for(Store s : storeList) {
+          System.out.printf("%nStore name: %s%n Earnings: %s%n", s.getName(), s.getEarnings());
+      }
+
+  }
+}
+
