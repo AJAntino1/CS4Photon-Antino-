@@ -1,4 +1,4 @@
-package exercise06photonantinoaj;
+package exercise07photonantinoaj;
 
 public abstract class Character {
     private String name;

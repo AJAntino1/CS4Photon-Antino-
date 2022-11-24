@@ -1,4 +1,4 @@
-package exercise06photonantinoaj;
+package exercise07photonantinoaj;
 public class NPC extends Character {
     private String dialog;
 

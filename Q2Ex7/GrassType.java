@@ -1,4 +1,4 @@
-package exercise06photonantinoaj;
+package exercise07photonantinoaj;
 
 public class GrassType extends Monster{
     
@@ -10,7 +10,6 @@ public class GrassType extends Monster{
     
     @Override
     public void special(){
-        super.special();
         this.hp = (int) (hp + maxHP*0.2);
         System.out.println(name + hp);
     }

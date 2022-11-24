@@ -1,4 +1,4 @@
-package exercise06photonantinoaj;
+package exercise07photonantinoaj;
 
 import java.util.ArrayList;
 
@@ -65,9 +65,7 @@ public abstract class Monster {
         }
     }
 
-    public void special(){
-        System.out.println(name + " did a pose.");
-    }
+    public abstract void special();
 
     public void restoreHealth(){
         hp = maxHP;

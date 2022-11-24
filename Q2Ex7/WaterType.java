@@ -1,4 +1,4 @@
-package exercise06photonantinoaj;
+package exercise07photonantinoaj;
 
 public class WaterType extends Monster{
     
@@ -10,7 +10,6 @@ public class WaterType extends Monster{
     
     @Override
     public void special(){
-        super.special();
         this.def = def + 2;
         this.hp = (int) (hp - maxHP*0.1);
         System.out.println(name + "'s Def is now " + def);
